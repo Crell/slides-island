@@ -21,6 +21,25 @@
       .reveal pre {
         width: 100%;
       }
+
+      dl.bullets {
+        text-align: left;
+        padding-left: 3em;
+      }
+      dl.bullets dt {
+        font-weight: bold;
+        color: #99cc99;
+      }
+      dl.bullets dd {
+        text-indent: 50px;
+        background-repeat: no-repeat;
+      }
+      dl.bullets dd.done {
+        background-image: url('assets/checkmark.svg');
+        background-size: 40px 40px;
+        color: #17ff2e;
+      }
+
     </style>
   </head>
   <body>
@@ -94,9 +113,30 @@
             </ul>
           </section>
           <section>
-            <h2>Result</h2>
-            <p>Copy and paste sharing</p>
+            <h3>Why we can't have nice things</h3>
+            <dl class="bullets">
+              <dt class="fragment">Where do I find code?</dt>
+              <dd class="fragment">PEAR and, um, blogs?</dd>
+              <dt class="fragment">How do I get code?</dt>
+              <dd class="fragment">Paste into your repository (or have root)</dd>
+              <dt class="fragment">How do I load your code?</dt>
+              <dd class="fragment">Manual includes</dd>
+              <dt class="fragment">How do I load everyone's code?</dt>
+              <dd class="fragment">Lots of manual includes</dd>
+              <dt class="fragment">Name clashes?</dt>
+              <dd class="fragment">YourProject_Before_Every_Single_Function()</dd>
+              <dt class="fragment">How can I collaborate on code?</dt>
+              <dd class="fragment">Sourceforge?</dd>
+              <dt class="fragment">Can I exchange code?</dt>
+              <dd class="fragment">LOLz</dd>
+            </dl>
           </section>
+          <section>
+            <h2>Result</h2>
+            <p>This is my island</p>
+            <p class="fragment">There are many like it, but this one is mine</p>
+          </section>
+
           <section>
             <img src="assets/downloads-drupal.png" alt="Drupal.org download page" />
             <p class="fragment">2% of the web cares</p>
@@ -114,14 +154,15 @@
             <p class="fragment">Who cares?</p>
           </section>
           <section>
-            <p>This was the best we could do.</p>
+            <p>This was the best we could do</p>
+            <p style="margin-top: 1em;"><q class="fragment">NIH is normal</q></p>
           </section>
           <section>
             <h3>PHP</h3>
             <img src="assets/elephpant-alliance.jpg" style="width: 80%" alt="PHP is the web" data-credit="http://www.flickr.com/photos/dragonbe/3411273755/" />
             <div class="fragment">
               <p>80% of the web cares</p>
-              <small>Source: http://w3techs.com/technologies/history_overview/programming_language</small>
+              <small>Source: <a href="http://w3techs.com/technologies/history_overview/programming_language">W3Techs</a></small>
             </div>
           </section>
           <section>
@@ -130,12 +171,12 @@
           </section>
           <section>
             <q>You're not a real PHP developer until you've written your own CMS.</q>
-            <q class="fragment">Because... PHP</q>
           </section>
         </section>
         <section>
-          <p>PHP is 18 years old</p>
-          <p class="fragment">and is finally growing up.</p>
+          <h3>That was then</h3>
+          <p class="fragment">PHP is 18 years old</p>
+          <p class="fragment roll-in">and is finally growing up</p>
         </section>
         <section>
           <section>
@@ -146,35 +187,146 @@
             <h3>PHP 5.0, 2004</h3>
           </section>
           <section>
-            Some autoloading code sample.
+            <p>First version</p>
+            <pre><code class="php">function __autoload($class) {
+  $file = some_logic($class);
+  include $file;
+}</code></pre>
+            <div class="fragment">
+              <p>Useful version</p>
+              <pre><code class="php">spl_autoload_register('myproject_autoloader');
+
+function myproject_autoloader($class) {
+  $file = some_logic($class);
+  include $file;
+}</code></pre>
+            </div>
           </section>
           <section>
-            PHP 5: Autoloading, c2004
+            <h3>Why we can't have nice things</h3>
+            <dl class="bullets">
+              <dt>Where do I find code?</dt>
+              <dd>PEAR and, um, blogs?</dd>
+              <dt>How do I get code?</dt>
+              <dd>Paste into your repository (or have root)</dd>
+              <dt>How do I load your code?</dt>
+              <dd class="done">Autloading</dd>
+              <dt>How do I load everyone's code?</dt>
+              <dd>Lots of manual includes</dd>
+              <dt>Name clashes?</dt>
+              <dd>YourProject_Before_Every_Single_Function()</dd>
+              <dt>How can I collaborate on code?</dt>
+              <dd>Sourceforge?</dd>
+              <dt>Can I exchange code?</dt>
+              <dd>LOLz</dd>
+            </dl>
           </section>
         </section>
         <section>
           <section>
-            <h1>Step 1: GitHub, c2008</h1>
+            <h1>Step 1</h1>
           </section>
           <section>
-            <q>Build software better, together</q>
+            <h2>GitHub</h2>
+            <h3>2008</h3>
           </section>
           <section>
-            Like Drupal.org, but for everyone!
+            <img src="assets/octocat.png" style="width: 60%;" alt="GitHub's OctoCat" />
+            <p><q>Build software better, together</q></p>
           </section>
           <section>
-            Better than Sourceforge et al by a wide margin.
+            <img src="assets/github-symfony.png" alt="The Symfony project on GitHub" />
+            <p>Like Drupal.org, but for everyone!</p>
+          </section>
+          <section>
+            <p>Better than Sourceforge et al by a wide margin.</p>
+          </section>
+          <section>
+            <h3>Why we can't have nice things</h3>
+            <dl class="bullets">
+              <dt>Where do I find code?</dt>
+              <dd>PEAR and, um, blogs?</dd>
+              <dt>How do I get code?</dt>
+              <dd>Paste into your repository (or have root)</dd>
+              <dt>How do I load your code?</dt>
+              <dd class="done">Autloading</dd>
+              <dt>How do I load everyone's code?</dt>
+              <dd>Lots of manual includes</dd>
+              <dt>Name clashes?</dt>
+              <dd>YourProject_Before_Every_Single_Function()</dd>
+              <dt>How can I collaborate on code?</dt>
+              <dd class="done">GitHub</dd>
+              <dt>Can I exchange code?</dt>
+              <dd>LOLz</dd>
+            </dl>
           </section>
         </section>
         <section>
           <section>
-            <h1>Step 1: Namespaces</h1>
+            <h1>Step 2</h1>
           </section>
           <section>
-            PHP 5.3, June 2009
+            <h2>Namespaces</h2>
+            <h3>PHP 5.3, June 2009</h3>
           </section>
           <section>
-            Solves name clashes
+            <h3>Before</h3>
+            <pre><code class="php">class Zend_Form {}
+
+class Application_Form_Guestbook extends Zend_Form {}
+
+class sfForm() {}
+</code></pre>
+            <div class="fragment">
+              <p>Oh PEAR...</p>
+              <pre><code class="php">class Structures_DataGrid_DataSource_CSV {}
+
+class Structures_DataGrid_DataSource_CSV_Memory
+    extends Structures_DataGrid_DataSource_CSV {}
+</code></pre>
+            </div>
+          </section>
+          <section>
+            <h3>After</h3>
+            <pre><code class="php">namespace Zend\Form;
+
+class Factory{}
+</code></pre>
+<pre class="fragment"><code class="php">namespace Zend\Form;
+
+use Zend\Captcha;
+
+$factory = new Factory();
+$captcha = new Captcha();
+</code></pre>
+<pre class="fragment"><code class="php">namespace Zend\Form;
+
+use Zend\Captcha;
+use Guzzle\Http\Client;
+
+$factory = new Factory();
+$captcha = new Captcha();
+$guzzle = new Client();
+</code></pre>
+          </section>
+          <section>
+            <h3>Why we can't have nice things</h3>
+            <dl class="bullets">
+              <dt>Where do I find code?</dt>
+              <dd>PEAR and, um, blogs?</dd>
+              <dt>How do I get code?</dt>
+              <dd>Paste into your repository (or have root)</dd>
+              <dt>How do I load your code?</dt>
+              <dd class="done">Autloading</dd>
+              <dt>How do I load everyone's code?</dt>
+              <dd>Lots of manual includes</dd>
+              <dt>Name clashes?</dt>
+              <dd class="done">Namespaces</dd>
+              <dt>How can I collaborate on code?</dt>
+              <dd class="done">GitHub</dd>
+              <dt>Can I exchange code?</dt>
+              <dd>LOLz</dd>
+            </dl>
           </section>
         </section>
         <section>
@@ -220,6 +372,7 @@
         </section>
         <section>
           We are no longer islands.
+          <img src="assets/drupal-island.jpg" alt="Drupal Island" data-credit="http://deeson-online.co.uk/blog/could-be-mythical-drupal-island" />
         </section>
         <section>
           <img src="assets/african-proverb.jpg" alt="If you want to go fast, go alone. If you want to go far, go together." data-credit="http://fibreoflife.blogspot.com/2013/01/new-year-together.html" />
