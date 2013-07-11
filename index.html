@@ -334,34 +334,274 @@ $guzzle = new Client();
             <h1>Step 3</h1>
           </section>
           <section>
-            FIG/PSR-0, May 2009
+            <h2>The PHP Standards Group</h2>
+            <h3>php|tek, May 2009</h3>
           </section>
           <section>
-            (Picture of a smoke-filled room)
+            <img src="assets/smoke-filled-room.jpg" alt="The smoke filled room where FIG was founded." data-credit="http://www.flickr.com/photos/poagao/23385812/" />
             <p class="fragment">(Smoke not guaranteed)</p>
           </section>
           <section>
-            PSR-0
-            Java-esque autoloading
-            (Describe how it works)
+            <q>We're going to have these namespace things,<br />let's use them the same way for a change!</q>
           </section>
           <section>
-            Worst. Launch. Ever.
+            <h2>PSR-0</h2>
+            <ul>
+              <li class="fragment">One autoloading standard/convention</li>
+              <li class="fragment">Java-inspired</li>
+              <li class="fragment">PEAR-inspired</li>
+              <li class="fragment">Rudimentary, but enough</li>
+            </ul>
           </section>
           <section>
-            Relocated to Google Groups, changed name from PHP Standards to Framework Interoperability Group
-            Went silent for 2 years.
+            <h2>PSR-0</h2>
+            <pre><code class="php">$root = '/some/root/path';
+
+spl_autoload_register(function($class_name) use ($root) {
+  $className = ltrim($className, '\\');
+  if ($lastNsPos = strrpos($className, '\\')) {
+    $namespace = substr($className, 0, $lastNsPos);
+    $className = substr($className, $lastNsPos + 1);
+    $fileName  = str_replace('\\', '/', $namespace) . '/';
+  }
+  $fileName .= str_replace('_', '/', $className) . '.php';
+
+  $require $root . '/' . $fileName;
+}
+
+new Guzzle\Http\Client;
+// require('/some/root/path/Guzzle/HttpClient.php');
+</code></pre>
+          </section>
+          <section>
+            <h1>Worst</h1>
+            <h1 class="fragment">Launch</h1>
+            <h1 class="fragment">Ever</h1>
+          </section>
+          <section>
+            <p>Thrown off lists.php.net, moved to Google</p>
+            <p class="fragment">Admitted a few new projects</p>
+            <p class="fragment">Slept through 2010</p>
+            <p class="fragment">Debated a lot in 2011</p>
+          </section>
+          <section>
+            <h3>Why we can't have nice things</h3>
+            <dl class="bullets">
+              <dt>Where do I find code?</dt>
+              <dd>PEAR and, um, blogs?</dd>
+              <dt>How do I get code?</dt>
+              <dd>Paste into your repository (or have root)</dd>
+              <dt>How do I load your code?</dt>
+              <dd class="done">Autloading</dd>
+              <dt>How do I load everyone's code?</dt>
+              <dd class="done">PSR-0</dd>
+              <dt>Name clashes?</dt>
+              <dd class="done">Namespaces</dd>
+              <dt>How can I collaborate on code?</dt>
+              <dd class="done">GitHub</dd>
+              <dt>Can I exchange code?</dt>
+              <dd>LOLz</dd>
+            </dl>
           </section>
         </section>
         <section>
           <section>
-            <h1>Step 4: Composer</h1>
+            <h1>Step 4</h1>
           </section>
           <section>
-            Steal slides from other presentation.
+            <h2>Composer</h2>
+            <h3>2011/2012</h3>
           </section>
           <section>
-            Symfony started using it in 2.1, 6 September 2012
+            <h2>Symfony 2.0</h2>
+            <ul>
+              <li class="fragment">Initial alpha, Symfony Live Paris, February 2010</li>
+              <li class="fragment">PHPBB: We're rebuilding on it!</li>
+              <li class="fragment">Symfony2 uses 3rd party libs (Doctrine, Monolog)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Dependency Hell</h2>
+            <img src="assets/hell-fire.jpg" alt="Dependencies are hell" data-credit="http://www.flickr.com/photos/31653823@N00/471628209" />
+          </section>
+          <section>
+            <h2>We need a dependency system!</h2>
+            <div class="fragment">
+              <q>It's dumb to make it Symfony specific</q>
+              <p>&mdash;Jordi Boggiano</p>
+            </div>
+          </section>
+          <section>
+            <h2>April 2011</h2>
+            <p class="fragment">Nils Aderman (PHPBB): libzypp -> PHP</p>
+            <p class="fragment">Jordi Boggiano (Monolog): Packagist, front-end for PEAR</p>
+          </section>
+          <section>
+            <h2>With their powers combined...</h2>
+            <p><strong>Composer</strong> is a tool for <em>dependency management</em> in PHP. It allows you to declare the dependent libraries your project needs and it will install them in your project for you.</p>
+          </section>
+          <section>
+            <h2>Uhh, what?</h2>
+            <ul>
+              <li class="fragment">No more Copy/Paste of libraries</li>
+              <li class="fragment">Resolves dependencies</li>
+              <li class="fragment">Each project defines its own requirements</li>
+              <li class="fragment">Performs build tasks</li>
+            </ul>
+          </section>
+          <section>
+            <h2>September 2011</h2>
+            <p><a href="http://packagist.org/">Packagist.org</a></p>
+            <blockquote>I'd say until early 2012 it was pretty unusable, yet people used it. I guess that's how badly it was needed.</blockquote>
+            <p>&mdash; Jordi Boggiano</p>
+          </section>
+          <section>
+            <h2>Symfony 2.1</h2>
+            <p>September 2012</p>
+            <p>Composer from the ground up</p>
+          </section>
+          <section>
+            <h2>Package count</h2>
+            <img src="assets/packagist-usage.png" alt="Number of packages on Packagist over time" />
+            <p>April 2013: 10,000 packages</p>
+            <p>(Not just Symfony!)</p>
+          </section>
+          <section>
+          <h2>Get Composer</h2>
+          <pre><code class="no-highlight">
+# Quick-n-easy:
+$ curl -sS https://getcomposer.org/installer | php
+
+# Global
+$ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
+</code></pre>
+          </section>
+          <section>
+            <h2>composer.json</h2>
+            <p>Base manifest file for your project</p>
+            <pre><code class="json">{
+    "name": "crell/myapp",
+    "description": "This app is amazing.",
+    "require": {
+        "guzzle/guzzle": "3.4.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "MyName\\MyPackage": "src/"
+        }
+    }
+}</code></pre>
+          </section>
+          <section>
+            <h2>composer install</h2>
+            <p>Installs all dependencies for your project</p><pre><code class="no-highlight">
+$ composer.phar install
+Loading composer repositories with package information
+Installing dependencies (including require-dev)
+  - Installing symfony/event-dispatcher (v2.3.1)
+    Downloading: 100%
+
+  - Installing guzzle/guzzle (v3.4.3)
+    Downloading: 100%
+
+symfony/event-dispatcher suggests installing symfony/dependency-injection ()
+symfony/event-dispatcher suggests installing symfony/http-kernel ()
+Writing lock file
+Generating autoload files
+</code></pre>
+          </section>
+          <section>
+            <h2>index.php</h2>
+            <pre><code class="php">require_once __DIR__ . '/vendor/autoload.php';
+
+// Every class is now yours to command!
+
+// Autoload on demand! Your work: zero.
+$client = new Guzzle\Http\Client('https://api.github.com');
+$request = $client->get('/user')->setAuth('user', 'pass');
+$response = $request->send();
+echo $response->getBody();
+  </code></pre>
+          </section>
+          <section>
+            <h3>Why we can't have nice things</h3>
+            <dl class="bullets">
+              <dt>Where do I find code?</dt>
+              <dd class="done">Packagist.org</dd>
+              <dt>How do I get code?</dt>
+              <dd class="done">Composer</dd>
+              <dt>How do I load your code?</dt>
+              <dd class="done">Autloading</dd>
+              <dt>How do I load everyone's code?</dt>
+              <dd class="done">PSR-0</dd>
+              <dt>Name clashes?</dt>
+              <dd class="done">Namespaces</dd>
+              <dt>How can I collaborate on code?</dt>
+              <dd class="done">GitHub</dd>
+              <dt>Can I exchange code?</dt>
+              <dd>LOLz</dd>
+            </dl>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Step 5</h1>
+          </section>
+          <section>
+            <h2>Common interfaces</h2>
+            <h3>2012-Present</h3>
+          </section>
+          <section>
+            <h2>PHP-FIG</h2>
+            <p class="fragment"><q>The organization formerly known as the<br />PHP Standards Group and now represented by this web site</q></p>
+            <p class="fragment">Became useful in 2012</p>
+            <p class="fragment">Renamed to PHP Framework Interoperability Group, June 2012</p>
+            <p class="fragment">New (first?) actual process definition, July 2013</p>
+          </section>
+          <section>
+            <h2>PSR-3</h2>
+            <p class="fragment">Standard logger interface</p>
+            <p class="fragment">Inspired by Monolog <span class="fragment">... and Drupal</span></p>
+          </section>
+          <section>
+            <h3>PSR-3</h3>
+            <pre><code class="php">namespace Psr\Log;
+
+interface LoggerInterface {
+  public function log($level, $message, array $context = array());
+
+  public function emergency($message, array $context = array());
+  public function alert($message, array $context = array());
+  public function critical($message, array $context = array());
+  public function error($message, array $context = array());
+  public function warning($message, array $context = array());
+  public function notice($message, array $context = array());
+  public function info($message, array $context = array());
+  public function debug($message, array $context = array());
+}</code></pre>
+          </section>
+          <section>
+            <h2>Cache PSR</h2>
+            <p>Stay tuned... ;-)</p>
+          </section>
+          <section>
+            <h3>Yes, we <em>can</em> have nice things</h3>
+            <dl class="bullets">
+              <dt>Where do I find code?</dt>
+              <dd class="done">Packagist.org</dd>
+              <dt>How do I get code?</dt>
+              <dd class="done">Composer</dd>
+              <dt>How do I load your code?</dt>
+              <dd class="done">Autloading</dd>
+              <dt>How do I load everyone's code?</dt>
+              <dd class="done">PSR-0</dd>
+              <dt>Name clashes?</dt>
+              <dd class="done">Namespaces</dd>
+              <dt>How can I collaborate on code?</dt>
+              <dd class="done">GitHub</dd>
+              <dt>Can I exchange code?</dt>
+              <dd class="done">PHP-FIG standard interfaces</dd>
+            </dl>
           </section>
         </section>
         <section>
