@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Getting off the Island</title>
+    <title>PHP PIE</title>
     <link rel="stylesheet" href="components/require.css" />
     <link rel="stylesheet" href="components/revealjs/css/theme/default.css" />
     <link rel="stylesheet" href="components/revealjs/lib/css/zenburn.css" />
@@ -46,21 +46,10 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Off the Island</h1>
+          <h1>PHP PIE</h1>
           <p>
-            <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a></small>
+            <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
           </p>
-        </section>
-        <section>
-          <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
-          <img src="assets/palantirnet-logo-2013.svg" alt="Palantir.net Pays me!" style="width: 300px; background: #FFF; float: right;" />
-          <ul>
-            <li>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></li>
-            <li>Drupal 8 Web Services Lead</li>
-            <li>Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
-            <li>Advisor, Drupal Association</li>
-            <li>General busybody</li>
-          </ul>
         </section>
         <section>
           <section>
@@ -84,22 +73,38 @@
             </div>
           </section>
           <section>
-            "No Silver Bullet", 1986.
+            <q>The most radical possible solution for constructing software<br />is not to construct it at all.</q>
+            <p>&mdash; "No Silver Bullet", 1986.</p>
+            <p style="margin-top: 1em;" class="fragment">Commercial Off The Shelf (COTS)</p>
           </section>
           <section>
-            Quote about COTS.
+            <q>The best way to attack the essence of building software<br />is not to build it at all.</q>
+            <p>&mdash; "'No Silver Bullet', Refired", 1995.</p>
           </section>
           <section>
             <p>Hey, look, Open Source!</p>
             <img src="assets/osi-symbol.png" style="width: 50%;" alt="The logo of the Open Source Initiative" data-credit="http://opensource.org/" />
           </section>
           <section>
-            Sharing!
+            <p>The way to be more productive is to write less code</p>
+            <p style="margin-top: 1em;" class="fragment">The way to be more productive is to reuse more code</p>
+          </section>
+          <section>
+            <blockquote>If a software engineer, a potential consumer of standardized software components,
+            perceives it to be more expensive to find a component that meets his needs, and so verify,
+            than to write one anew, a new, duplicative component will be written. Notice we said perceives
+            above. It doesn't matter what the true cost of reconstruction is.</blockquote>
+            <p>&mdash; Van Snyder, JPL<br />as quoted in "'No Silver Bullet', Refired", 1995.</p>
+            <p style="margin-top: 1em;" class="fragment"><q>Sharing must be easy or it won't happen</q></p>
+          </section>
+          <section>
+            <p>Sharing is how Open Source works</p>
+            <p style="margin-top: 1em;" class="fragment">Sucking at sharing is how<br />Open Source dies</p>
           </section>
         </section>
         <section>
           <section>
-            <h2>The olden days</h2>
+            <h1>The olden days</h1>
           </section>
           <section>
             <h2>PEAR</h2>
@@ -132,11 +137,13 @@
             </dl>
           </section>
           <section>
+            <p>PHP sucked at sharing</p>
+          </section>
+          <section>
             <h2>Result</h2>
-            <p>This is my island</p>
+            <p class="fragment">This is my island</p>
             <p class="fragment">There are many like it, but this one is mine</p>
           </section>
-
           <section>
             <img src="assets/downloads-drupal.png" alt="Drupal.org download page" />
             <p class="fragment">2% of the web cares</p>
@@ -171,6 +178,10 @@
           </section>
           <section>
             <q>You're not a real PHP developer until you've written your own CMS.</q>
+          </section>
+          <section>
+            <p>Sharing is how Open Source works</p>
+            <p style="margin-top: 1em;" class="fragment">Sucking at sharing is how<br />Open Source dies</p>
           </section>
         </section>
         <section>
@@ -369,8 +380,8 @@ spl_autoload_register(function($class_name) use ($root) {
   $require $root . '/' . $fileName;
 }
 
-new Guzzle\Http\Client;
-// require('/some/root/path/Guzzle/HttpClient.php');
+new Guzzle\Http\Client();
+// require('/some/root/path/Guzzle/Http/Client.php');
 </code></pre>
           </section>
           <section>
@@ -379,7 +390,7 @@ new Guzzle\Http\Client;
             <h1 class="fragment">Ever</h1>
           </section>
           <section>
-            <p>Thrown off lists.php.net, moved to Google</p>
+            <p>Thrown off lists.php.net, moved to Google Groups</p>
             <p class="fragment">Admitted a few new projects</p>
             <p class="fragment">Slept through 2010</p>
             <p class="fragment">Debated a lot in 2011</p>
@@ -452,8 +463,10 @@ new Guzzle\Http\Client;
           <section>
             <h2>September 2011</h2>
             <p><a href="http://packagist.org/">Packagist.org</a></p>
-            <blockquote>I'd say until early 2012 it was pretty unusable, yet people used it. I guess that's how badly it was needed.</blockquote>
-            <p>&mdash; Jordi Boggiano</p>
+            <div class="fragment">
+              <blockquote>I'd say until early 2012 it was pretty unusable, yet people used it. I guess that's how badly it was needed.</blockquote>
+              <p>&mdash; Jordi Boggiano</p>
+            </div>
           </section>
           <section>
             <h2>Symfony 2.1</h2>
@@ -512,16 +525,18 @@ Generating autoload files
           </section>
           <section>
             <h2>index.php</h2>
-            <pre><code class="php">require_once __DIR__ . '/vendor/autoload.php';
+            <pre><code class="php">use Guzzle\Http\Client;
+
+require_once __DIR__ . '/vendor/autoload.php';
 
 // Every class is now yours to command!
 
 // Autoload on demand! Your work: zero.
-$client = new Guzzle\Http\Client('https://api.github.com');
+$client = new Client('https://api.github.com');
 $request = $client->get('/user')->setAuth('user', 'pass');
 $response = $request->send();
 echo $response->getBody();
-  </code></pre>
+</code></pre>
           </section>
           <section>
             <h3>Why we can't have nice things</h3>
@@ -553,7 +568,7 @@ echo $response->getBody();
           </section>
           <section>
             <h2>PHP-FIG</h2>
-            <p class="fragment"><q>The organization formerly known as the<br />PHP Standards Group and now represented by this web site</q></p>
+            <p class="fragment"><q>The organization formerly known as the<br />PHP Standards Group and now represented by <a href="http://www.php-fig.org/">this web site</a></q></p>
             <p class="fragment">Became useful in 2012</p>
             <p class="fragment">Renamed to PHP Framework Interoperability Group, June 2012</p>
             <p class="fragment">New (first?) actual process definition, July 2013</p>
@@ -605,13 +620,84 @@ interface LoggerInterface {
           </section>
         </section>
         <section>
-          Drupal/Symfony
+          <p>The way to be more productive is to write less code</p>
+          <p style="margin-top: 1em;" class="fragment">The way to be more productive is to reuse more code</p>
         </section>
         <section>
-          Symfony 2.3 includes Zend components (Er, doesn't seem to?)
+          <section>
+            <img src="assets/druplicon.svg" style="width: 40%; border: 0px;" alt="Druplicon" />
+          </section>
+          <section fullscreen-img="assets/yes.jpg" class="fullscreen">
+            &nbsp;
+          </section>
+          <section>
+            <h2>The mission...</h2>
+            <blockquote>Drupal needs to evolve, and quickly, from a
+              first-class web CMS into a first-class REST server that includes a
+              first-class web CMS.</blockquote>
+
+            <blockquote class="fragment" style="margin-top: 2em;">Hey, look, a first-class REST server!</blockquote>
+          </section>
+          <section>
+            <img src="assets/drufony.png" alt="Drupal + Symfony = Drufony" style="max-height: 500px;" />
+          </section>
+          <section>
+            <h2>Drupal 8</h2>
+            <ul>
+              <li class="fragment">Symfony2 <small>(HttpFoundation, HttpKernel, DependencyInjection, EventDispatcher, Routing, Serializer, Validator, Yaml)</small></li>
+              <li class="fragment">Symfony CMF</li>
+              <li class="fragment">Zend Feed</li>
+              <li class="fragment">Doctrine Annotations</li>
+              <li class="fragment">Guzzle</li>
+              <li class="fragment">EasyRDF</li>
+              <li class="fragment">Assetic</li>
+              <li class="fragment">Twig</li>
+              <li class="fragment">PHPUnit</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Drupal in Symfony</h2>
+            <ul>
+              <li class="fragment">Flash Messages</li>
+              <li class="fragment">BinaryFileResponse</li>
+              <li class="fragment">Context support in Validator/Serializer</li>
+              <li class="fragment">Routing improvements</li>
+              <li class="fragment">Symfony CMF Router</li>
+              <li class="fragment">Many other odds and ends</li>
+            </ul>
+          </section>
+          <section>
+            <h2>More collaboration</h2>
+            <ul>
+              <li class="fragment">Doctrine Annotations Performance</li>
+              <li class="fragment">Guzzle restructuring</li>
+              <li class="fragment">Zend Feed dependencies</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Symfony and Zend</h2>
+            <p class="fragment">Zend ProxyManager in DependencyInjection Component</p>
+            <p class="fragment">Great news for Symfony!</p>
+          </section>
+          <section>
+            <img style="width: 90%" src="assets/kitten-mindmeld.jpg" alt="We work better together" data-credit="http://nagamakironin.blogspot.fr/2010/09/dennis-markuze-you-need-help.html" />
+          </section>
+          <section>
+            <p>Of course we're still using Composer wrong</p>
+            <p class="fragment" style="margin-top: 1em;">And we have no one blame but fear of the unknown</p>
+          </section>
         </section>
         <section>
-          We are no longer islands.
+          <h3>The new normal</h3>
+          <q>Given 2 ways to solve a problem,<br />choose the approach that results in less code in the world.</q>
+        </section>
+        <section>
+          <h3><del>Not Invented Here</del></h3>
+          <h3 class="fragment">Proudly Invented Elsewhere</h3>
+          <img class="fragment" src="assets/pie.jpg" style="width: 75%" alt="Proudly Invented Elsewhere is tasty." data-credit="http://www.flickr.com/photos/jaypeg/300749794/" />
+        </section>
+        <section>
+          <p>We are no longer islands.</p>
           <img src="assets/drupal-island.jpg" alt="Drupal Island" data-credit="http://deeson-online.co.uk/blog/could-be-mythical-drupal-island" />
         </section>
         <section>
