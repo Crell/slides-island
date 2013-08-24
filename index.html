@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>PHP PIE</title>
+    <title>Open Source, PHP, and PIE</title>
     <link rel="stylesheet" href="components/require.css" />
     <link rel="stylesheet" href="components/revealjs/css/theme/default.css" />
     <link rel="stylesheet" href="components/revealjs/lib/css/zenburn.css" />
@@ -46,7 +46,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>PHP PIE</h1>
+          <h1>OSS, PHP, and PIE</h1>
           <p>
             <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
           </p>
@@ -60,7 +60,8 @@
             <img src="assets/computer-junk.jpg" alt="Pollution in the computer world" data-credit="http://www.flickr.com/photos/pollas/1137668349/" />
           </section>
           <section>
-            Too much code.
+            <p>We have too much code</p>
+            <p class="fragment">in the world</p>
           </section>
           <section>
             <h3><q>No Silver Bullet</q></h3>
@@ -145,19 +146,19 @@
             <p class="fragment">There are many like it, but this one is mine</p>
           </section>
           <section>
-            <img src="assets/downloads-drupal.png" alt="Drupal.org download page" />
+            <img src="assets/downloads-drupal.png" style="width: 80%;" alt="Drupal.org download page" />
             <p class="fragment">2% of the web cares</p>
           </section>
           <section>
-            <img src="assets/downloads-joomla.png" alt="Joomla.org download page" />
+            <img src="assets/downloads-joomla.png" style="width: 80%;" alt="Joomla.org download page" />
             <p class="fragment">3% of the web cares</p>
           </section>
           <section>
-            <img src="assets/downloads-wordpress.png" alt="Wordpress.org download page" />
+            <img src="assets/downloads-wordpress.png" style="width: 80%;" alt="Wordpress.org download page" />
             <p class="fragment">18% of the web cares</p>
           </section>
           <section>
-            <img src="assets/downloads-cakephp.png" alt="CakePHP download page" />
+            <img src="assets/downloads-cakephp.png" style="width: 80%;" alt="CakePHP download page" />
             <p class="fragment">Who cares?</p>
           </section>
           <section>
@@ -165,7 +166,6 @@
             <p style="margin-top: 1em;"><q class="fragment">NIH is normal</q></p>
           </section>
           <section>
-            <h3>PHP</h3>
             <img src="assets/elephpant-alliance.jpg" style="width: 80%" alt="PHP is the web" data-credit="http://www.flickr.com/photos/dragonbe/3411273755/" />
             <div class="fragment">
               <p>80% of the web cares</p>
@@ -363,6 +363,7 @@ $guzzle = new Client();
               <li class="fragment">PEAR-inspired</li>
               <li class="fragment">Rudimentary, but enough</li>
             </ul>
+            <p class="fragment" style="margin-top: 1em;"><code>&lt;vendor&gt;\Package\Whatever</code></p>
           </section>
           <section>
             <h2>PSR-0</h2>
@@ -422,6 +423,7 @@ new Guzzle\Http\Client();
           <section>
             <h2>Composer</h2>
             <h3>2011/2012</h3>
+            <img src="assets/composer.png" alt="Composer logo" />
           </section>
           <section>
             <h2>Symfony 2.0</h2>
@@ -622,6 +624,7 @@ interface LoggerInterface {
         <section>
           <p>The way to be more productive is to write less code</p>
           <p style="margin-top: 1em;" class="fragment">The way to be more productive is to reuse more code</p>
+          <p style="margin-top: 1em;" class="fragment">The way to be more productive is to <em>share</em> more code</p>
         </section>
         <section>
           <section>
@@ -639,7 +642,7 @@ interface LoggerInterface {
             <blockquote class="fragment" style="margin-top: 2em;">Hey, look, a first-class REST server!</blockquote>
           </section>
           <section>
-            <img src="assets/drufony.png" alt="Drupal + Symfony = Drufony" style="max-height: 500px;" />
+            <img src="assets/symfony.png" alt="Symfony" style="height: 500px;" />
           </section>
           <section>
             <h2>Drupal 8</h2>
@@ -686,10 +689,14 @@ interface LoggerInterface {
             <p>Of course we're still using Composer wrong</p>
             <p class="fragment" style="margin-top: 1em;">And we have no one blame but fear of the unknown</p>
           </section>
+          <section>
+            <img src="assets/drufony.png" alt="Drupal + Symfony = Drufony" style="max-height: 500px;" />
+          </section>
         </section>
         <section>
           <h3>The new normal</h3>
-          <q>Given 2 ways to solve a problem,<br />choose the approach that results in less code in the world.</q>
+          <p>Given 2 ways to solve a problem,<br />choose the approach that results in less code</p>
+          <p class="fragment">in the world</p>
         </section>
         <section>
           <h3><del>Not Invented Here</del></h3>
