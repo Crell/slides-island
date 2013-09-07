@@ -368,11 +368,11 @@ $guzzle = new Client();
             <h3>php|tek, May 2009</h3>
           </section>
           <section>
-            <img src="assets/smoke-filled-room.jpg" alt="The smoke filled room where FIG was founded." data-credit="http://www.flickr.com/photos/poagao/23385812/" />
-            <p class="fragment">(Smoke not guaranteed)</p>
+            <q>We're going to have these namespace things,<br />let's use them the same way for a change!</q>
           </section>
           <section>
-            <q>We're going to have these namespace things,<br />let's use them the same way for a change!</q>
+            <img src="assets/smoke-filled-room.jpg" alt="The smoke filled room where FIG was founded." data-credit="http://www.flickr.com/photos/poagao/23385812/" />
+            <p class="fragment">(Smoke not guaranteed)</p>
           </section>
           <section>
             <h2>PSR-0</h2>
@@ -386,20 +386,11 @@ $guzzle = new Client();
           </section>
           <section>
             <h2>PSR-0</h2>
-            <pre><code class="php">$root = '/some/root/path';
 
-spl_autoload_register(function($class_name) use ($root) {
-  $className = ltrim($className, '\\');
-  if ($lastNsPos = strrpos($className, '\\')) {
-    $namespace = substr($className, 0, $lastNsPos);
-    $className = substr($className, $lastNsPos + 1);
-    $fileName  = str_replace('\\', '/', $namespace) . '/';
-  }
-  $fileName .= str_replace('_', '/', $className) . '.php';
+            <pre><code class="php">new \Some\Class\Name_Here();</code></pre>
+            <pre class="fragment"><code class="php">include_once $some_root . '/Some/Class/Name/Here.php';</code></pre>
 
-  $require $root . '/' . $fileName;
-}
-
+            <pre class="fragment"><code class="php">
 new Guzzle\Http\Client();
 // require('/some/root/path/Guzzle/Http/Client.php');
 </code></pre>
@@ -617,8 +608,9 @@ interface LoggerInterface {
 }</code></pre>
           </section>
           <section>
-            <h2>Cache PSR</h2>
-            <p>Stay tuned... ;-)</p>
+            <h2>PSR-6 (Draft)</h2>
+            <p>Unified caching interface</p>
+            <p class="fragment">Stay tuned... ;-)</p>
           </section>
           <section>
             <h3>Yes, we <em>can</em> have nice things</h3>
