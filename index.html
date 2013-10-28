@@ -65,6 +65,12 @@
         content: '\201D';
       }
 
+      .reveal section img {
+        border: 0px;
+        box-shadow: none;
+        background: none;
+      }
+
       ul.gophp5-logo-list img {
         max-width: 200px;
         max-height: 200px;
@@ -259,10 +265,10 @@ function myproject_autoloader($class) {
             <p>&mdash; Every PHP developer circa 2007</p>
           </section>
           <section>
-            <p><q>I can't use PHP 5, no hosts support it.</q><br />&mdash; Developers</p>
-            <p class="fragment" style="margin-top: 1em;"><q>I can't upgrade to PHP 5, no projects require it.</q><br />&mdash; Hosts</p>
-            <p class="fragment" style="margin-top: 1em;"><q>We can't drop support for PHP 4, all the hosts still use it.</q><br />&mdash; PHP Internals</p>
-            <p class="fragment" style="margin-top: 1em;"><q>We can't be the first to use PHP 5, I'll lose my users.</q><br />&mdash; PHP projects</p>
+            <p><q>I can't use PHP 5, no hosts support it.</q><br />&mdash;Developers</p>
+            <p class="fragment" style="margin-top: 1em;"><q>I can't upgrade to PHP 5, no projects require it.</q><br />&mdash;Hosts</p>
+            <p class="fragment" style="margin-top: 1em;"><q>We can't drop support for PHP 4, all the hosts still use it.</q><br />&mdash;PHP Internals</p>
+            <p class="fragment" style="margin-top: 1em;"><q>We can't be the first to use PHP 5, we'll lose our users.</q><br />&mdash;PHP projects</p>
           </section>
           <section>
             <img src="assets/facepalm-paris.jpg" alt="Facepalm" data-credit="http://en.wikipedia.org/wiki/File:Paris_Tuileries_Garden_Facepalm_statue.jpg" />
@@ -331,9 +337,6 @@ function myproject_autoloader($class) {
           </section>
           <section>
             <img src="assets/github-symfony.png" alt="The Symfony project on GitHub" />
-            <p>Like Drupal.org, but for everyone!</p>
-          </section>
-          <section>
             <p>Better than Sourceforge et al by a wide margin.</p>
           </section>
           <section>
@@ -447,12 +450,12 @@ $guzzle = new Client();
               <li class="fragment">PEAR-inspired</li>
               <li class="fragment">Rudimentary, but enough</li>
             </ul>
-            <p class="fragment" style="margin-top: 1em;"><code>&lt;vendor&gt;\Package\Whatever</code></p>
           </section>
           <section>
             <h2>PSR-0</h2>
+            <p class="fragment" style="margin-top: 1em;"><code>&lt;vendor&gt;\Package\Whatever</code></p>
 
-            <pre><code class="php">new \Some\Class\Name_Here();</code></pre>
+            <pre class="fragment"><code class="php">new \Some\Class\Name_Here();</code></pre>
             <pre class="fragment"><code class="php">include_once $some_root . '/Some/Class/Name/Here.php';</code></pre>
 
             <pre class="fragment"><code class="php">
@@ -553,7 +556,7 @@ new Guzzle\Http\Client();
           <section>
             <h2>Package count</h2>
             <img src="assets/packagist-usage.png" alt="Number of packages on Packagist over time" />
-            <p>April 2013: 10,000 packages</p>
+            <p>October 2013: 18,000 packages</p>
             <p>(Not just Symfony!)</p>
           </section>
           <section>
@@ -706,9 +709,6 @@ interface LoggerInterface {
           <section>
             <img src="assets/druplicon.svg" style="width: 40%; border: 0px; background: transparent; border: 0px;" alt="Druplicon" />
           </section>
-          <section data-background="assets/yes.jpg" >
-            &nbsp;
-          </section>
           <section>
             <h2>The mission...</h2>
             <blockquote>Drupal needs to evolve, and quickly, from a
@@ -761,13 +761,6 @@ interface LoggerInterface {
           <section>
             <img style="width: 90%" src="assets/kitten-mindmeld.jpg" alt="We work better together" data-credit="http://nagamakironin.blogspot.fr/2010/09/dennis-markuze-you-need-help.html" />
           </section>
-          <section>
-            <p>Of course we're still using Composer wrong</p>
-            <p class="fragment" style="margin-top: 1em;">And we have no one blame but fear of the unknown</p>
-          </section>
-          <section>
-            <img src="assets/drufony.png" alt="Drupal + Symfony = Drufony" style="max-height: 500px;" />
-          </section>
         </section>
         <section>
           <h3>The new normal</h3>
@@ -780,7 +773,7 @@ interface LoggerInterface {
           <img class="fragment" src="assets/pie.jpg" style="width: 75%" alt="Proudly Invented Elsewhere is tasty." data-credit="http://www.flickr.com/photos/jaypeg/300749794/" />
         </section>
         <section>
-          <p>We are no longer islands.</p>
+          <p>We are no longer islands</p>
           <img src="assets/drupal-island.jpg" alt="Drupal Island" data-credit="http://deeson-online.co.uk/blog/could-be-mythical-drupal-island" />
         </section>
         <section>
