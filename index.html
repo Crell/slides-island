@@ -58,7 +58,29 @@
         background-size: 40px 40px;
         color: #17ff2e;
       }
+      q:before {
+        content: '\201C';
+      }
+      q:after {
+        content: '\201D';
+      }
 
+      ul.gophp5-logo-list img {
+        max-width: 200px;
+        max-height: 200px;
+        border: 0px;
+        background: transparent;
+      }
+      ul.gophp5-logo-list li {
+        list-style: none;
+        display: block;
+        width: 200px;
+        float: left;
+        margin: 10px;
+     }
+     ul.gophp5-logo-list li:nth-child(4n) {
+       clear: left;
+     }
     </style>
   </head>
   <body>
@@ -231,6 +253,49 @@ function myproject_autoloader($class) {
   include $file;
 }</code></pre>
             </div>
+          </section>
+          <section>
+            <blockquote>If only I could find a web host that offered PHP 5</blockquote>
+            <p>&mdash; Every PHP developer circa 2007</p>
+          </section>
+          <section>
+            <p><q>I can't use PHP 5, no hosts support it.</q><br />&mdash; Developers</p>
+            <p class="fragment" style="margin-top: 1em;"><q>I can't upgrade to PHP 5, no projects require it.</q><br />&mdash; Hosts</p>
+            <p class="fragment" style="margin-top: 1em;"><q>We can't drop support for PHP 4, all the hosts still use it.</q><br />&mdash; PHP Internals</p>
+            <p class="fragment" style="margin-top: 1em;"><q>We can't be the first to use PHP 5, I'll lose my users.</q><br />&mdash; PHP projects</p>
+          </section>
+          <section>
+            <img src="assets/facepalm-paris.jpg" alt="Facepalm" data-credit="http://en.wikipedia.org/wiki/File:Paris_Tuileries_Garden_Facepalm_statue.jpg" />
+          </section>
+          <section>
+            <h3>5 July 2007</h3>
+            <a href="http://www.garfieldtech.com/blog/go-php-5-go"><img src="assets/gophp5_logo.png" style="border: 0px;" alt="GoPHP5 asssassinated a programming language" /></a>
+          </section>
+          <section>
+            <h3><img src="assets/gophp5_logo.png" style="border: 0px; height: 1.3em;" alt="GoPHP5" /></h3>
+            <ul class="gophp5-logo-list">
+              <li><img src="assets/druplicon.svg" alt="Drupal" /></li>
+              <li><img src="assets/symfony.png" alt="Symfony" /></li>
+              <li><img src="assets/typo3-orange.svg" alt="Typo3" /></li>
+              <li><img src="assets/phpmyadmin-logo.png" alt="phpMyAdmin" /></li>
+              <li><img src="assets/propel.gif" alt="Propel" /></li>
+              <li><img src="assets/doctrineorm.jpg" alt="Doctrine" /></li>
+            </ul>
+            <p class="fragment" ><q>We've decided that we will all be first.</q></p>
+          </section>
+          <section>
+            <h3><img src="assets/gophp5_logo.png" style="border: 0px; height: 1.3em;" alt="GoPHP5" /></h3>
+            <ul>
+              <li class="fragment">5 July 2007: 6 projects</li>
+              <li class="fragment">One month later:
+                <ul>
+                  <li>100 projects</li>
+                  <li>200 hosts</li>
+                </ul>
+              </li>
+              <li class="fragment">13 July 2007: PHP 4 EOL announced</li>
+            </ul>
+            <p class="fragment" style="margin-top: 1em; font-size: 1.5em;">Epic. Win.</p>
           </section>
           <section>
             <h3>Why we can't have nice things</h3>
