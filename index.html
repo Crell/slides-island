@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/palantir.css" id="theme">
+    <link rel="stylesheet" href="palantir/palantir.css" id="theme">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -22,13 +22,73 @@
       document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <style type="text/css">
+      .top-align {
+        position: absolute;
+        top: -6em;
+      }
+      h1.inverse,
+      h2.inverse,
+      h3.inverse,
+      h4.inverse,
+      p.inverse {
+        color: #222f31; /* Palantir Dark Gray */
+      }
+      .reveal pre {
+        width: 100%;
+      }
+
+      dl.bullets {
+        text-align: left;
+        padding-left: 3em;
+      }
+      dl.bullets dt {
+        color: #9fc855; /* Palantir Green */ 
+        font-weight: bold;
+      }
+      dl.bullets dd {
+        text-indent: 50px;
+        background-repeat: no-repeat;
+      }
+      dl.bullets dd.done {
+        background-image: url('assets/checkmark.svg');
+        background-size: 40px 40px;
+        color: #33cc00; 
+      }
+      q:before {
+        content: '\201C';
+      }
+      q:after {
+        content: '\201D';
+      }
+
+      .reveal section img {
+        border: 0px;
+        box-shadow: none;
+        background: none;
+      }
+
+      ul.gophp5-logo-list img {
+        max-width: 200px;
+        max-height: 200px;
+        border: 0px;
+        background: transparent;
+      }
+      ul.gophp5-logo-list li {
+        list-style: none;
+        display: block;
+        width: 200px;
+        float: left;
+        margin: 10px;
+      }
+      ul.gophp5-logo-list li:nth-child(4n) {
+       clear: left;
+      }  
+    </style>
   </head>
   <body>
     <div class="palantir-logo">
-      <img src="assets/palantirnet-logo-4c-reversed.svg">
+      <img src="palantir/palantirnet-logo-4c-reversed.svg">
     </div>
     <div class="reveal">
       <div class="slides">
@@ -160,7 +220,7 @@
             <p class="fragment">Who cares?</p>
           </section>
           <section>
-            <p>This was the best we could do</p>
+            <p class="large">This was the best we could do</p>
             <p style="margin-top: 1em;"><q class="fragment">NIH is normal</q></p>
           </section>
           <section>
