@@ -154,3 +154,6 @@ q:after {
   border: 0px;
   box-shadow: none;
   background: none; }
+
+p.bigtext {
+  font-size: 150%; }
