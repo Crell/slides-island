@@ -1,2 +1,4 @@
 vendor
 components
+.DS_Store
+.sass-cache
