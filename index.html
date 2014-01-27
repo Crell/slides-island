@@ -76,7 +76,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>OSS, PHP, and PIE</h1>
+          <h1>OSS, PHP, &amp; PIE</h1>
           <p>
             <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
           </p>
@@ -111,12 +111,12 @@
             </aside>
           </section>
           <section>
-            <q>The most radical possible solution for constructing software<br />is not to construct it at all.</q>
+            <q>The most radical possible solution for constructing software is not to construct it at all.</q>
             <p>&mdash; "No Silver Bullet", 1986.</p>
             <p style="margin-top: 1em;" class="fragment">Commercial Off The Shelf (COTS)</p>
           </section>
           <section>
-            <q>The best way to attack the essence of building software<br />is not to build it at all.</q>
+            <q>The best way to attack the essence of building<br />software is not to build it at all.</q>
             <p>&mdash; "'No Silver Bullet', Refired", 1995.</p>
           </section>
           <section>
@@ -210,11 +210,11 @@
             </div>
           </section>
           <section>
-            <q>The average PHP programmer has written 2.5<br />frameworks in his career.</q>
+            <q>The average PHP programmer has written<br />2.5 frameworks in his career.</q>
             <p>&mdash; Urban legend statistics</p>
           </section>
           <section>
-            <q>You're not a real PHP developer until you've written your own CMS.</q>
+            <q>You're not a real PHP developer until<br />you've written your own CMS.</q>
           </section>
           <section>
             <p>Sharing is how Open Source works</p>
@@ -251,7 +251,7 @@ function myproject_autoloader($class) {
             </div>
           </section>
           <section>
-            <blockquote>If only I could find a web host that offered PHP 5</blockquote>
+            <blockquote style="width: 60%">If only I my web host offered PHP 5</blockquote>
             <p>&mdash; Every PHP developer circa 2007</p>
           </section>
           <section>
@@ -278,6 +278,11 @@ function myproject_autoloader($class) {
               <li><img src="assets/doctrineorm.jpg" alt="Doctrine" /></li>
             </ul>
             <p class="fragment" ><q>We've decided that we will all be first.</q></p>
+            <aside class="notes">
+              <ul>
+                <li>Dirty little secret: Symfony, Propel, and Doctrine already PHP 5.</li>
+              </ul>
+            </aside>
           </section>
           <section>
             <h3><img src="assets/gophp5_logo.png" style="border: 0px; height: 1.3em;" alt="GoPHP5" /></h3>
@@ -510,7 +515,7 @@ new Guzzle\Http\Client();
             <img src="assets/hell-fire.jpg" alt="Dependencies are hell" data-credit="http://www.flickr.com/photos/31653823@N00/471628209" />
           </section>
           <section>
-            <h2>We need a dependency system!</h2>
+            <p class="bigtext">We need a dependency system!</p>
             <div class="fragment">
               <q>It's dumb to make it Symfony specific</q>
               <p>&mdash;Jordi Boggiano</p>
@@ -550,13 +555,12 @@ new Guzzle\Http\Client();
           <section>
             <h2>Package count</h2>
             <img src="assets/packagist-usage.png" alt="Number of packages on Packagist over time" />
-            <p>October 2013: 18,000 packages</p>
+            <p>January 2014: 22,000 packages</p>
             <p>(Not just Symfony!)</p>
           </section>
           <section>
           <h2>Get Composer</h2>
-          <pre><code class="no-highlight">
-# Quick-n-easy:
+          <pre><code class="no-highlight"># Quick-n-easy:
 $ curl -sS https://getcomposer.org/installer | php
 
 # Global
@@ -642,9 +646,9 @@ echo $response->getBody();
           </section>
           <section>
             <h2>PHP-FIG</h2>
-            <p class="fragment"><q>The organization formerly known as the<br />PHP Standards Group and now represented by <a href="http://www.php-fig.org/">this web site</a></q></p>
+            <p class="fragment"><q>The organization formerly known as the<br />PHP Standards Group and now represented by<br /><a href="http://www.php-fig.org/">this web site</a></q></p>
             <p class="fragment">Became useful in 2012</p>
-            <p class="fragment">Renamed to PHP Framework Interoperability Group, June 2012</p>
+            <p class="fragment">Renamed to <em>PHP Framework Interoperability Group</em>,<br />June 2012</p>
             <p class="fragment">New (first?) actual process definition, July 2013</p>
           </section>
           <section>
