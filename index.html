@@ -22,6 +22,8 @@
       document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
+    <script src="palantir/classer.js"></script>
+
     <style type="text/css">
       .top-align {
         position: absolute;
@@ -33,6 +35,10 @@
       h4.inverse,
       p.inverse {
         color: #222f31; /* Palantir Dark Gray */
+      }
+
+      .struck {
+        text-decoration: line-through;
       }
 
       dl.bullets {
@@ -669,7 +675,8 @@ echo $response->getBody();
           </section>
           <section>
             <h3>PSR-3</h3>
-            <pre><code class="php">namespace Psr\Log;
+            <pre><code class="php" data-trim>
+namespace Psr\Log;
 
 interface LoggerInterface {
   public function log($level, $message, array $context = array());
@@ -682,12 +689,44 @@ interface LoggerInterface {
   public function notice($message, array $context = array());
   public function info($message, array $context = array());
   public function debug($message, array $context = array());
-}</code></pre>
+}
+            </code></pre>
           </section>
           <section>
-            <h2>PSR-6 (Draft)</h2>
-            <p>Unified caching interface</p>
-            <p class="fragment">Stay tuned... ;-)</p>
+            <h2>PSR-6 (Review)</h2>
+            <p class="fragment">Unified caching interface</p>
+            <ul>
+              <li class="fragment">Cache "Pools" and "Items"</li>
+              <li class="fragment">Designed for extensibility</li>
+              <li class="fragment">Multi-get/set, stampede protection?</li>
+            </ul>
+            <p class="fragment">Editor: Yours Truly :-)</p>
+          </section>
+          <section>
+            <h2>PSR-6 (Review)</h2>
+            <pre><code class="php" data-trim>
+function get_widget_list() {
+    $pool = get_cache_pool('widgets');
+    $item = $pool->getItem('widget_list');
+    if (!$item->isHit()) {
+        $value = compute_expensive_widget_list();
+        $item->set($value);
+        $pool->save($item);
+    }
+    return $item->get();
+}
+            </code></pre>
+          </section>
+          <section>
+            <h3>PSR-7 (Review)</h3>
+            <p class="fragment">HTTP Messages</p>
+            <ul>
+              <li class="fragment">Think Symfony\HttpFoundation Jr.</li>
+              <li class="fragment">Request/Response only</li>
+              <li class="fragment">Works for clients and servers</li>
+              <li class="fragment"></li>
+            </ul>
+            <p class="fragment">Editor: Michael Dowling, Guzzle</p>
           </section>
           <section>
             <h3>Yes, we <em>can</em> have nice things</h3>
@@ -777,8 +816,8 @@ interface LoggerInterface {
           <p class="fragment">in the world</p>
         </section>
         <section>
-          <h3><del>Not Invented Here</del></h3>
-          <h3 class="fragment">Proudly Invented Elsewhere</h3>
+          <h3 id="nih-title">Not Invented Here</h3>
+          <h3 class="fragment" data-classer="nih-title" data-classer-class="struck">Proudly Invented Elsewhere</h3>
           <img class="fragment" src="assets/pie.jpg" style="width: 75%" alt="Proudly Invented Elsewhere is tasty." data-credit="http://www.flickr.com/photos/jaypeg/300749794/" />
         </section>
         <section>
@@ -792,14 +831,12 @@ interface LoggerInterface {
           <p>Our world is changing fast.</p>
           <p class="fragment" style="margin-top: 1em;">Let's go somewhere together.</p>
         </section>
-        <section>
+        <section id="final-slide">
           <h2>Larry Garfield</h2>
           <p>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></p>
-          <p>Drupal core developer</p>
-          <p>PHP-FIG representative</p>
-          <p>Loveable pedant</p>
-          <p style="margin-top: 1em;">Yell at me on Twitter: <a href="http://twitter.com/Crell">@Crell</a></p>
-          <p>Stalk me professionally at <a href="http://twitter.com/Palantir">@Palantir</a></p>
+          <p>Making the Web a Better Place</p>
+          <p>Keep tabs on our work at <a href="http://twitter.com/Palantir">@Palantir</a></p>
+          <p>Want to hear about <a href="http://eepurl.com/ws6uj">what we're doing</a>?</p>
         </section>
       </div>
     </div>
