@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Open Source, PHP, and PIE</title>
+    <title>The PHP Renaissance</title>
 
     <meta name="author" content="Larry Garfield">
 
@@ -82,20 +82,20 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Open Source,<br />PHP, &amp; PIE</h1>
+          <h1>The PHP Renaissance</h1>
           <p>
             <small>Presented by <a href="http://www.garfieldtech.com/">Larry Garfield</a> (<a href="http://twitter.com/Crell">@Crell</a>)</small>
           </p>
         </section>
         <section>
           <h2><a href="http://twitter.com/Crell">@Crell</a></h2>
-          <img src="assets/palantirnet-logo-2013.svg" alt="Palantir.net Pays me!" style="width: 300px; background: #FFF; float: right;" />
+          <img src="palantir/palantirnet-logo-4c-reversed.svg" alt="Palantir.net Pays me!" style="width: 300px; float: right;" />
           <ul>
             <li>Senior Architect, <a href="http://www.palantir.net/">Palantir.net</a></li>
             <li>Drupal 8 Web Services Lead</li>
             <li>Drupal Representative, <a href="http://www.php-fig.org/">PHP-FIG</a></li>
             <li>Advisor, Drupal Association</li>
-            <li>General busybody</li>
+            <li>Loveable pedant</li>
           </ul>
         </section>
         <section>
@@ -253,18 +253,22 @@
           </section>
           <section>
             <p>First version</p>
-            <pre><code class="php">function __autoload($class) {
+            <pre><code class="php" data-trim>
+function __autoload($class) {
   $file = some_logic($class);
   include $file;
-}</code></pre>
+}
+            </code></pre>
             <div class="fragment">
               <p>Useful version</p>
-              <pre><code class="php">spl_autoload_register('myproject_autoloader');
+              <pre><code class="php" data-trim>
+spl_autoload_register('myproject_autoloader');
 
 function myproject_autoloader($class) {
   $file = some_logic($class);
   include $file;
-}</code></pre>
+}
+              </code></pre>
             </div>
           </section>
           <section>
@@ -385,35 +389,40 @@ function myproject_autoloader($class) {
           </section>
           <section>
             <h3>Before</h3>
-            <pre><code class="php">class Zend_Form {}
+            <pre><code class="php" data-trim>
+class Zend_Form {}
 
 class Application_Form_Guestbook extends Zend_Form {}
 
 class sfForm() {}
-</code></pre>
+            </code></pre>
             <div class="fragment">
               <p>Oh PEAR...</p>
-              <pre><code class="php">class Structures_DataGrid_DataSource_CSV {}
+              <pre><code class="php" data-trim>
+class Structures_DataGrid_DataSource_CSV {}
 
 class Structures_DataGrid_DataSource_CSV_Memory
     extends Structures_DataGrid_DataSource_CSV {}
-</code></pre>
+              </code></pre>
             </div>
           </section>
           <section>
             <h3>After</h3>
-            <pre><code class="php">namespace Zend\Form;
+            <pre><code class="php" data-trim>
+namespace Zend\Form;
 
 class Factory{}
-</code></pre>
-<pre class="fragment"><code class="php">namespace Zend\Form;
+            </code></pre>
+            <pre class="fragment"><code class="php" data-trim>
+namespace Zend\Form;
 
 use Zend\Captcha;
 
 $factory = new Factory();
 $captcha = new Captcha();
-</code></pre>
-<pre class="fragment"><code class="php">namespace Zend\Form;
+            </code></pre>
+            <pre class="fragment"><code class="php" data-trim>
+namespace Zend\Form;
 
 use Zend\Captcha;
 use Guzzle\Http\Client;
@@ -421,7 +430,7 @@ use Guzzle\Http\Client;
 $factory = new Factory();
 $captcha = new Captcha();
 $guzzle = new Client();
-</code></pre>
+            </code></pre>
           </section>
           <section>
             <h3>Why we can't have nice things</h3>
@@ -474,10 +483,10 @@ $guzzle = new Client();
             <pre class="fragment"><code class="php">new \Some\Class\Name_Here();</code></pre>
             <pre class="fragment"><code class="php">include_once $some_root . '/Some/Class/Name/Here.php';</code></pre>
 
-            <pre class="fragment"><code class="php">
+            <pre class="fragment"><code class="php" data-trim>
 new Guzzle\Http\Client();
 // require('/some/root/path/Guzzle/Http/Client.php');
-</code></pre>
+            </code></pre>
           </section>
           <section>
             <h1>Worst</h1>
@@ -572,22 +581,24 @@ new Guzzle\Http\Client();
           <section>
             <h2>Package count</h2>
             <img src="assets/packagist-usage.png" alt="Number of packages on Packagist over time" />
-            <p>January 2014: 22,000 packages</p>
+            <p>June 2014: 33,000 packages</p>
             <p>(Not just Symfony!)</p>
           </section>
           <section>
-          <h2>Get Composer</h2>
-          <pre><code class="no-highlight"># Quick-n-easy:
+            <h2>Get Composer</h2>
+            <pre><code class="no-highlight" data-trim>
+# Quick-n-easy:
 $ curl -sS https://getcomposer.org/installer | php
 
 # Global
 $ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
-</code></pre>
+            </code></pre>
           </section>
           <section>
             <h2>composer.json</h2>
             <p>Base manifest file for your project</p>
-            <pre><code class="json">{
+            <pre><code class="json" data-trim>
+{
     "name": "crell/myapp",
     "description": "This app is amazing.",
     "require": {
@@ -598,11 +609,13 @@ $ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
             "MyName\\MyPackage": "src/"
         }
     }
-}</code></pre>
+}
+            </code></pre>
           </section>
           <section>
             <h2>composer install</h2>
-            <p>Installs all dependencies for your project</p><pre><code class="no-highlight">
+            <p>Installs all dependencies for your project</p>
+            <pre><code class="no-highlight" data-trim>
 $ composer.phar install
 Loading composer repositories with package information
 Installing dependencies (including require-dev)
@@ -616,11 +629,12 @@ symfony/event-dispatcher suggests installing symfony/dependency-injection ()
 symfony/event-dispatcher suggests installing symfony/http-kernel ()
 Writing lock file
 Generating autoload files
-</code></pre>
+            </code></pre>
           </section>
           <section>
             <h2>index.php</h2>
-            <pre><code class="php">use Guzzle\Http\Client;
+            <pre><code class="php" data-trim>
+use Guzzle\Http\Client;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -631,7 +645,7 @@ $client = new Client('https://api.github.com');
 $request = $client->get('/user')->setAuth('user', 'pass');
 $response = $request->send();
 echo $response->getBody();
-</code></pre>
+            </code></pre>
           </section>
           <section>
             <h3>Why we can't have nice things</h3>
@@ -725,7 +739,6 @@ function get_widget_list() {
               <li class="fragment">Think Symfony\HttpFoundation Jr.</li>
               <li class="fragment">Request/Response only</li>
               <li class="fragment">Works for clients and servers</li>
-              <li class="fragment"></li>
             </ul>
             <p class="fragment">Editor: Michael Dowling, Guzzle</p>
           </section>
@@ -806,7 +819,7 @@ interface ResponseInterface extends MessageInterface {
               first-class web CMS into a first-class REST server that includes a
               first-class web CMS.</blockquote>
 
-            <blockquote class="fragment" style="margin-top: 2em;">Hey, look, a first-class REST server!</blockquote>
+            <blockquote class="fragment" style="margin-top: 2em;">Hey, look, a first-class HTTP framework!</blockquote>
           </section>
           <section>
             <img src="assets/symfony.png" alt="Symfony" style="height: 500px;" />
@@ -846,7 +859,7 @@ interface ResponseInterface extends MessageInterface {
           </section>
           <section>
             <h2>Symfony and Zend</h2>
-            <p class="fragment">Zend ProxyManager in DependencyInjection Component</p>
+            <p class="fragment">ProxyManager component shared by Zend and Symfony DependencyInjection Component</p>
             <p class="fragment">Great news for Symfony!</p>
           </section>
           <section>
