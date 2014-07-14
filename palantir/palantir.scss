@@ -188,3 +188,7 @@ q:after {
 p.bigtext {
   font-size: 150%;
 }
+
+.reveal ul + p {
+  margin-top: 1em;
+}
